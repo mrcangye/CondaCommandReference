@@ -4,6 +4,8 @@
 
 `conda`命令参考，来源于英文官方文档[Command reference](https://docs.conda.io/projects/conda/en/latest/commands.html#)
 
+我就慢悠悠更新吧。争取稳一点
+
 值得一提的是，`conda`提供了命令行帮助模式，当为某个命令犹豫不决的时候，不妨试试在这个命令的后面加上`--help`标签
 
 举个栗子
