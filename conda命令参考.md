@@ -4,8 +4,6 @@
 
 `conda`命令参考，来源于英文官方文档[Command reference](https://docs.conda.io/projects/conda/en/latest/commands.html#)
 
-我就慢悠悠更新吧。争取稳一点
-
 值得一提的是，`conda`提供了命令行帮助模式，当为某个命令犹豫不决的时候，不妨试试在这个命令的后面加上`--help`标签
 
 举个栗子
@@ -31,7 +29,7 @@ usage: conda clean [-h] [-a] [-i] [-p] [-t] [-f]
 
 - -a, --all
 
-  删除索引缓存、锁定文件、未使用的缓存包和压缩包
+  删除索引缓存、锁定的文件、未使用的缓存包和压缩包
 
 - -i, --index-cache
 
@@ -41,7 +39,7 @@ usage: conda clean [-h] [-a] [-i] [-p] [-t] [-f]
 
   从可写的包缓存中删除未使用的包。
 
-  警告：这不会检查通过符号链接方式安装到包缓存的包。
+  警告：通过符号链接方式安装的包是不会被检查的
 
 - -t, --tarballs
 
@@ -178,7 +176,7 @@ usage: conda config [-h] [--json] [-v] [-q] [--system | --env | --file FILE]
 
 ### `conda create`
 
-从指定的包列表创建一个新的 conda 环境。 要使用创建的环境，在该环境的目录中使用`conda activate envname`。 此命令需要` -n NAME `或` -p PREFIX `选项。
+从指定的包列表创建一个新的 conda 环境。 要使用创建的环境，在该环境的目录中使用`conda activate envname`。 `envname`用你的环境的名字替换一下。此命令需要` -n NAME `或` -p PREFIX `选项。
 
 命令选项
 
@@ -211,9 +209,9 @@ usage: conda create [-h] [--clone ENV] [-n ENVIRONMENT | -p PATH] [-c CHANNEL]
 
 - --dev
 
-  在脚本中使用`` sys.executable -m conda` 而不是 CONDA程序。 主要用于针对旧 Python 版本测试新 conda 源的开发测试期间使用。
+  在脚本中使用`sys.executable -m conda` 而不是 conda程序。 主要用于针对旧 Python 版本测试新 conda 源的开发测试期间使用。
 
-#### Target Environment Specification
+#### 目标环境的选项
 
 - -n, --name
 
@@ -223,11 +221,11 @@ usage: conda create [-h] [--clone ENV] [-n ENVIRONMENT | -p PATH] [-c CHANNEL]
 
   环境的全路径
 
-#### Channel Customization
+#### 自定义源
 
 - -c, --channel
 
-  用于搜索包的附加频道（源）。 按照给定顺序搜索URL。包括使用`file`语法或简单路径的本地目录，然后搜索 `.condarc`文件中的默认值或频道（除非给出了 --override-channels）。既可以使用`defaults`来获取`conda`的默认包。 也可以使用任何名字，并且`.condarc`文件中的` channel_alias `值将被添加。默认的`channel_alias`值请参阅 http://conda.anaconda.org/
+  用于搜索包的源。 按照给定顺序搜索URL。包括使用`file`语法或简单路径的本地目录，然后搜索 `.condarc`文件中的默认值或源（除非给出了 --override-channels）。既可以使用`defaults`来获取`conda`的默认包。 也可以使用任何名字，并且`.condarc`文件中的` channel_alias `值将被添加。默认的`channel_alias`值请参阅 http://conda.anaconda.org/
 
 - --use-local
 
@@ -235,63 +233,65 @@ usage: conda create [-h] [--clone ENV] [-n ENVIRONMENT | -p PATH] [-c CHANNEL]
 
 - --override-channels
 
-  不要搜索默认或 `.condarc` 频道。要求 `--channel`
+  不搜索默认或 `.condarc` 源。要求 `--channel`
 
 - --repodata-fn
 
   Specify name of repodata on remote server. Conda will try whatever you specify, but will ultimately fall back to repodata.json if your specs are not satisfiable with what you specify here. This is used to employ repodata that is reduced in time scope. You may pass this flag more than once. Leftmost entries are tried first, and the fallback to repodata.json is added for you automatically.
+  
+  指定远程服务器上的 repodata 名称。 Conda 将尝试你指定的任何内容，但如果你的规范与你在此处指定的内容不符，将退回到 repodata.json。 这用于使用时间范围减少的 repodata。 你可以多次通过此标志。 首先尝试最左边的条目，并自动为你添加 repodata.json 的后备。
 
 #### Solver Mode Modifiers
 
 - --strict-channel-priority
 
-  Packages in lower priority channels are not considered if a package with the same name appears in a higher priority channel.
+  如果具有相同名称的包出现在较高优先级源中，则不考虑较低优先级源中的包。
 
 - --no-channel-priority
 
-  Package version takes precedence over channel priority. Overrides the value given by conda config --show channel_priority.
+  包版本优先于源优先级。 覆盖 `conda config --show channel_priority `给出的值。
 
 - --no-deps
 
-  Do not install, update, remove, or change dependencies. This WILL lead to broken environments and inconsistent behavior. Use at your own risk.
+  不安装、更新、删除或更改依赖项。 这将导致破坏环境和不一致的行为。 风险自负。
 
 - --only-deps
 
-  Only install dependencies.
+  只安装依赖项。
 
 - --no-pin
 
-  Ignore pinned file.
+  忽略固定文件。
 
 - --no-default-packages
 
-  Ignore create_default_packages in the .condarc file.
+  忽略 .condarc 文件中的`create_default_packages`。
 
-#### Package Linking and Install-time Options
+#### 包链接和安装时的选项
 
 - --copy
 
-  Install all packages using copies instead of hard- or soft-linking.
+  使用副本而不是硬链接或软链接安装所有软件包。
 
-#### Networking Options
+#### 网络选项
 
 - -C, --use-index-cache
 
-  Use cache of channel index files, even if it has expired.
+  使用源索引文件的缓存，即使它已过期。
 
 - -k, --insecure
 
-  Allow conda to perform "insecure" SSL connections and transfers. Equivalent to setting 'ssl_verify' to 'false'.
+  允许 conda 执行不安全的 SSL 连接和传输。 相当于将`ssl_verify`设置为`false`。
 
 - --offline
 
-  Offline mode. Don't connect to the Internet.
+  离线模式，不连接网络。
 
 #### 输出、提示和控制流选项
 
 - -d, --dry-run
 
-  只显示本来应该做的事情。
+  只显示本应该做的事情。
 
 - --json
 
@@ -315,54 +315,44 @@ usage: conda create [-h] [--clone ENV] [-n ENVIRONMENT | -p PATH] [-c CHANNEL]
 
 - --show-channel-urls
 
-  Show channel urls. Overrides the value given by conda config --show show_channel_urls.
+  显示源地址。 覆盖`conda config --show show_channel_urls` 给出的值.
 
 
-
-Examples:
-
-> conda create -n myenv sqlite
-
-
-
-[Next ](https://docs.conda.io/projects/conda/en/latest/commands/info.html)[ Previous](https://docs.conda.io/projects/conda/en/latest/commands/config.html)
 
 ### `conda info`
 
+显示有关conda 安装的信息。
 
-
-Display information about current conda install.
-
-Options:
-
-
+选项有：
 
 ```
 usage: conda info [-h] [--json] [-v] [-q] [-a] [--base] [-e] [-s]
                   [--unsafe-channels]
 ```
 
-#### Named Arguments
+#### 命名参数
 
 - -a, --all
 
-  Show all information.
+  显示所有的信息
 
 - --base
 
-  Display base environment path.
+  显示基本环境路径。
 
 - -e, --envs
 
   List all known conda environments.
 
+  列出所有已知的conda 环境
+
 - -s, --system
 
-  List environment variables.
+  列出环境变量
 
 - --unsafe-channels
 
-  Display list of channels with tokens exposed.
+  现示不安全的源列表。
 
 #### 输出、提示和控制流选项
 
@@ -380,21 +370,9 @@ usage: conda info [-h] [--json] [-v] [-q] [-a] [--base] [-e] [-s]
 
 ### `conda install`
 
+将软件包安装到指定的 conda 环境中。
 
-
-Installs a list of packages into a specified conda environment.
-
-> This command accepts a list of package specifications (e.g, bitarray=0.8) and installs a set of packages consistent with those specifications and compatible with the underlying environment. If full compatibility cannot be assured, an error is reported and the environment is not changed.
->
-> Conda attempts to install the newest versions of the requested packages. To accomplish this, it may update some packages that are already installed, or install additional packages. To prevent existing packages from updating, use the --freeze-installed option. This may force conda to install older versions of the requested packages, and it does not prevent additional dependency packages from being installed.
->
-> If you wish to skip dependency checking altogether, use the '--no-deps' option. This may result in an environment with incompatible packages, so this option must be used with great caution.
->
-> conda can also be called with a list of explicit conda package filenames (e.g. ./lxml-3.2.0-py27_0.tar.bz2). Using conda in this mode implies the --no-deps option, and should likewise be used with great caution. Explicit filenames and package specifications cannot be mixed in a single command.
-
-Options:
-
-
+选项：
 
 ```
 usage: conda install [-h] [--revision REVISION] [-n ENVIRONMENT | -p PATH]
@@ -409,25 +387,25 @@ usage: conda install [-h] [--revision REVISION] [-n ENVIRONMENT | -p PATH]
                      [package_spec [package_spec ...]]
 ```
 
-#### Positional Arguments
+#### 包参数
 
 - package_spec
 
-  Packages to install or update in the conda environment.
+  要在 conda 环境中安装或更新的软件包的名字。
 
-#### Named Arguments
+#### 命名参数
 
 - --revision
 
-  Revert to the specified REVISION.
+  恢复到指定的 REVISION。
 
 - --file
 
-  Read package versions from the given file. Repeated file specifications can be passed (e.g. --file=file1 --file=file2).
+  从给定文件中读取包版本。 可以重复使用（例如 --file=file1 --file=file2）。
 
 - --dev
 
-  Use sys.executable -m conda in wrapper scripts instead of CONDA_EXE. This is mainly for use during tests where we test new conda source against old Python versions.
+  在包装脚本中使用 sys.executable -m conda 而不是 CONDA_EXE。 这主要用于在我们针对旧 Python 版本测试新 conda 源的测试期间使用。
 
 #### Target Environment Specification
 
@@ -1170,4 +1148,3 @@ Scroll to the right to see the entire table.
 
 \* `conda update python` updates to the most recent in the series, so any Python 2.x would update to the latest 2.x and any Python 3.x to the latest 3.x.
 
-[Next ](https://docs.conda.io/projects/conda/en/latest/commands/clean.html)[ Previous](https://docs.conda.io/projects/conda/en/latest/release-notes.html)
