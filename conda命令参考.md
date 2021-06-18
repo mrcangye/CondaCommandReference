@@ -407,33 +407,33 @@ usage: conda install [-h] [--revision REVISION] [-n ENVIRONMENT | -p PATH]
 
   在包装脚本中使用 sys.executable -m conda 而不是 CONDA_EXE。 这主要用于在我们针对旧 Python 版本测试新 conda 源的测试期间使用。
 
-#### Target Environment Specification
+#### 目标环境参数
 
 - -n, --name
 
-  Name of environment.
+  环境名字
 
 - -p, --prefix
 
-  Full path to environment location (i.e. prefix).
+  环境的路径
 
-#### Channel Customization
+#### 自定义源
 
 - -c, --channel
 
-  Additional channel to search for packages. These are URLs searched in the orderthey are given (including local directories using the '[file://](file:///)' syntax or simply a path like '/home/conda/mychan' or '../mychan'). Then, the defaults or channels from .condarc are searched (unless --override-channels is given). You can use 'defaults' to get the default packages for conda. You can also use any name and the .condarc channel_alias value will be prepended. The default channel_alias is http://conda.anaconda.org/.
+  用于搜索包的源。 按照给定顺序搜索URL。包括使用`file`语法或简单路径的本地目录，然后搜索 `.condarc`文件中的默认值或源（除非给出了 --override-channels）。既可以使用`defaults`来获取`conda`的默认包。 也可以使用任何名字，并且`.condarc`文件中的` channel_alias `值将被添加。默认的`channel_alias`值请参阅 http://conda.anaconda.org/
 
 - --use-local
 
-  Use locally built packages. Identical to '-c local'.
+  使用本地构建的包。与`-c local`同样的作用
 
 - --override-channels
 
-  Do not search default or .condarc channels. Requires --channel.
+  不搜索默认或 `.condarc` 源。要求 `--channel`
 
 - --repodata-fn
 
-  Specify name of repodata on remote server. Conda will try whatever you specify, but will ultimately fall back to repodata.json if your specs are not satisfiable with what you specify here. This is used to employ repodata that is reduced in time scope. You may pass this flag more than once. Leftmost entries are tried first, and the fallback to repodata.json is added for you automatically.
+  指定远程服务器上的 repodata 名称。 Conda 将尝试你指定的任何内容，但如果你的规范与你在此处指定的内容不符，将退回到 repodata.json。 这用于使用时间范围减少的 repodata。 你可以多次通过此标志。 首先尝试最左边的条目，并自动为你添加 repodata.json 的后备。
 
 #### Solver Mode Modifiers
 
@@ -545,9 +545,7 @@ Examples:
 
 > conda install -n myenv scipy
 
-
-
-# `conda list`
+### `conda list`
 
 
 
@@ -564,13 +562,13 @@ usage: conda list [-h] [-n ENVIRONMENT | -p PATH] [--json] [-v] [-q]
                   [regex]
 ```
 
-## Positional Arguments
+#### Positional Arguments
 
 - regex
 
   List only packages matching this regular expression.
 
-## Named Arguments
+#### Named Arguments
 
 - --show-channel-urls
 
@@ -604,7 +602,7 @@ usage: conda list [-h] [-n ENVIRONMENT | -p PATH] [--json] [-v] [-q]
 
   Do not include pip-only installed packages.
 
-## Target Environment Specification
+#### Target Environment Specification
 
 - -n, --name
 
@@ -614,7 +612,7 @@ usage: conda list [-h] [-n ENVIRONMENT | -p PATH] [--json] [-v] [-q]
 
   Full path to environment location (i.e. prefix).
 
-## Output, Prompt, and Flow Control Options
+#### Output, Prompt, and Flow Control Options
 
 - --json
 
@@ -652,7 +650,7 @@ Reinstall packages from an export file:
 
 [Next ](https://docs.conda.io/projects/conda/en/latest/commands/package.html)[ Previous](https://docs.conda.io/projects/conda/en/latest/commands/install.html)
 
-# `conda package`
+### `conda package`
 
 
 
@@ -668,7 +666,7 @@ usage: conda package [-h] [-n ENVIRONMENT | -p PATH] [-w PATH [PATH ...]] [-r]
                      [--pkg-build PKG_BUILD]
 ```
 
-## Named Arguments
+#### Named Arguments
 
 - -w, --which
 
@@ -694,7 +692,7 @@ usage: conda package [-h] [-n ENVIRONMENT | -p PATH] [-w PATH [PATH ...]] [-r]
 
   Package build number of the created package.
 
-## Target Environment Specification
+#### Target Environment Specification
 
 - -n, --name
 
@@ -706,7 +704,7 @@ usage: conda package [-h] [-n ENVIRONMENT | -p PATH] [-w PATH [PATH ...]] [-r]
 
 [Next ](https://docs.conda.io/projects/conda/en/latest/commands/remove.html)[ Previous](https://docs.conda.io/projects/conda/en/latest/commands/list.html)
 
-# `conda remove`
+### `conda remove`
 
 
 
@@ -726,19 +724,19 @@ usage: conda remove [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
                     [package_name [package_name ...]]
 ```
 
-## Positional Arguments
+#### Positional Arguments
 
 - package_name
 
   Package names to remove from the environment.
 
-## Named Arguments
+#### Named Arguments
 
 - --dev
 
   Use sys.executable -m conda in wrapper scripts instead of CONDA_EXE. This is mainly for use during tests where we test new conda source against old Python versions.
 
-## Target Environment Specification
+#### Target Environment Specification
 
 - -n, --name
 
@@ -748,7 +746,7 @@ usage: conda remove [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
   Full path to environment location (i.e. prefix).
 
-## Channel Customization
+#### Channel Customization
 
 - -c, --channel
 
@@ -756,17 +754,17 @@ usage: conda remove [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
 - --use-local
 
-  Use locally built packages. Identical to '-c local'.
+  使用本地构建的包。与`-c local`同样的作用
 
 - --override-channels
 
-  Do not search default or .condarc channels. Requires --channel.
+  不搜索默认或 `.condarc` 源。要求 `--channel`
 
 - --repodata-fn
 
   Specify name of repodata on remote server. Conda will try whatever you specify, but will ultimately fall back to repodata.json if your specs are not satisfiable with what you specify here. This is used to employ repodata that is reduced in time scope. You may pass this flag more than once. Leftmost entries are tried first, and the fallback to repodata.json is added for you automatically.
 
-## Solver Mode Modifiers
+#### Solver Mode Modifiers
 
 - --all
 
@@ -784,7 +782,7 @@ usage: conda remove [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
   Ignore pinned file.
 
-## Networking Options
+#### Networking Options
 
 - -C, --use-index-cache
 
@@ -798,7 +796,7 @@ usage: conda remove [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
   Offline mode. Don't connect to the Internet.
 
-## Output, Prompt, and Flow Control Options
+#### Output, Prompt, and Flow Control Options
 
 - -d, --dry-run
 
@@ -826,7 +824,7 @@ Examples:
 
 > conda remove -n myenv scipy
 
-# `conda search`
+### `conda search`
 
 
 
@@ -845,7 +843,7 @@ usage: conda search [-h] [--envs] [-i] [--subdir SUBDIR] [-c CHANNEL]
                     [--json] [-v] [-q]
 ```
 
-## Named Arguments
+#### Named Arguments
 
 - --envs
 
@@ -859,7 +857,7 @@ usage: conda search [-h] [--envs] [-i] [--subdir SUBDIR] [-c CHANNEL]
 
   Search the given subdir. Should be formatted like 'osx-64', 'linux-32', 'win-64', and so on. The default is to search the current platform.
 
-## Channel Customization
+#### Channel Customization
 
 - -c, --channel
 
@@ -867,17 +865,17 @@ usage: conda search [-h] [--envs] [-i] [--subdir SUBDIR] [-c CHANNEL]
 
 - --use-local
 
-  Use locally built packages. Identical to '-c local'.
+  使用本地构建的包。与`-c local`同样的作用
 
 - --override-channels
 
-  Do not search default or .condarc channels. Requires --channel.
+  不搜索默认或 `.condarc` 源。要求 `--channel`
 
 - --repodata-fn
 
   Specify name of repodata on remote server. Conda will try whatever you specify, but will ultimately fall back to repodata.json if your specs are not satisfiable with what you specify here. This is used to employ repodata that is reduced in time scope. You may pass this flag more than once. Leftmost entries are tried first, and the fallback to repodata.json is added for you automatically.
 
-## Networking Options
+#### Networking Options
 
 - -C, --use-index-cache
 
@@ -891,7 +889,7 @@ usage: conda search [-h] [--envs] [-i] [--subdir SUBDIR] [-c CHANNEL]
 
   Offline mode. Don't connect to the Internet.
 
-## Output, Prompt, and Flow Control Options
+#### Output, Prompt, and Flow Control Options
 
 - --json
 
@@ -939,7 +937,7 @@ Search for a package on a specific channel
 
 
 
-# `conda update`
+### `conda update`
 
 
 
@@ -965,19 +963,19 @@ usage: conda update [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
                     [package_spec [package_spec ...]]
 ```
 
-## Positional Arguments
+#### Positional Arguments
 
 - package_spec
 
   Packages to install or update in the conda environment.
 
-## Named Arguments
+#### Named Arguments
 
 - --file
 
   Read package versions from the given file. Repeated file specifications can be passed (e.g. --file=file1 --file=file2).
 
-## Target Environment Specification
+#### Target Environment Specification
 
 - -n, --name
 
@@ -987,7 +985,7 @@ usage: conda update [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
   Full path to environment location (i.e. prefix).
 
-## Channel Customization
+#### Channel Customization
 
 - -c, --channel
 
@@ -995,17 +993,17 @@ usage: conda update [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
 - --use-local
 
-  Use locally built packages. Identical to '-c local'.
+  使用本地构建的包。与`-c local`同样的作用
 
 - --override-channels
 
-  Do not search default or .condarc channels. Requires --channel.
+  不搜索默认或 `.condarc` 源。要求 `--channel`
 
 - --repodata-fn
 
   Specify name of repodata on remote server. Conda will try whatever you specify, but will ultimately fall back to repodata.json if your specs are not satisfiable with what you specify here. This is used to employ repodata that is reduced in time scope. You may pass this flag more than once. Leftmost entries are tried first, and the fallback to repodata.json is added for you automatically.
 
-## Solver Mode Modifiers
+#### Solver Mode Modifiers
 
 - --strict-channel-priority
 
@@ -1051,7 +1049,7 @@ usage: conda update [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
   Update based on provided specifications.
 
-## Package Linking and Install-time Options
+#### Package Linking and Install-time Options
 
 - --copy
 
@@ -1061,7 +1059,7 @@ usage: conda update [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
   Allow clobbering of overlapping file paths within packages, and suppress related warnings.
 
-## Networking Options
+#### Networking Options
 
 - -C, --use-index-cache
 
@@ -1075,7 +1073,7 @@ usage: conda update [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
   Offline mode. Don't connect to the Internet.
 
-## Output, Prompt, and Flow Control Options
+#### Output, Prompt, and Flow Control Options
 
 - -d, --dry-run
 
@@ -1117,7 +1115,7 @@ Examples:
 
 
 
-## [Conda vs. pip vs. virtualenv commands](https://docs.conda.io/projects/conda/en/latest/commands.html#id2)
+### [Conda vs. pip vs. virtualenv commands](https://docs.conda.io/projects/conda/en/latest/commands.html#id2)
 
 If you have used pip and virtualenv in the past, you can use conda to perform all of the same operations. Pip is a package manager and virtualenv is an environment manager. Conda is both.
 
