@@ -481,11 +481,11 @@ usage: conda install [-h] [--revision REVISION] [-n ENVIRONMENT | -p PATH]
 
   Update based on provided specifications.
 
-#### Package Linking and Install-time Options
+#### 包链接和安装时的选项
 
 - --copy
 
-  Install all packages using copies instead of hard- or soft-linking.
+  使用副本而不是硬链接或软链接安装所有软件包。
 
 - -m, --mkdir
 
@@ -495,19 +495,19 @@ usage: conda install [-h] [--revision REVISION] [-n ENVIRONMENT | -p PATH]
 
   Allow clobbering of overlapping file paths within packages, and suppress related warnings.
 
-#### Networking Options
+#### 网络选项
 
 - -C, --use-index-cache
 
-  Use cache of channel index files, even if it has expired.
+  使用源索引文件的缓存，即使它已过期。
 
 - -k, --insecure
 
-  Allow conda to perform "insecure" SSL connections and transfers. Equivalent to setting 'ssl_verify' to 'false'.
+  允许 conda 执行不安全的 SSL 连接和传输。 相当于将`ssl_verify`设置为`false`。
 
 - --offline
 
-  Offline mode. Don't connect to the Internet.
+  离线模式，不连接网络。
 
 #### 输出、提示和控制流选项
 
@@ -782,19 +782,19 @@ usage: conda remove [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
   Ignore pinned file.
 
-#### Networking Options
+#### 网络选项
 
 - -C, --use-index-cache
 
-  Use cache of channel index files, even if it has expired.
+  使用源索引文件的缓存，即使它已过期。
 
 - -k, --insecure
 
-  Allow conda to perform "insecure" SSL connections and transfers. Equivalent to setting 'ssl_verify' to 'false'.
+  允许 conda 执行不安全的 SSL 连接和传输。 相当于将`ssl_verify`设置为`false`。
 
 - --offline
 
-  Offline mode. Don't connect to the Internet.
+  离线模式，不连接网络。
 
 #### Output, Prompt, and Flow Control Options
 
@@ -875,19 +875,19 @@ usage: conda search [-h] [--envs] [-i] [--subdir SUBDIR] [-c CHANNEL]
 
   Specify name of repodata on remote server. Conda will try whatever you specify, but will ultimately fall back to repodata.json if your specs are not satisfiable with what you specify here. This is used to employ repodata that is reduced in time scope. You may pass this flag more than once. Leftmost entries are tried first, and the fallback to repodata.json is added for you automatically.
 
-#### Networking Options
+#### 网络选项
 
 - -C, --use-index-cache
 
-  Use cache of channel index files, even if it has expired.
+  使用源索引文件的缓存，即使它已过期。
 
 - -k, --insecure
 
-  Allow conda to perform "insecure" SSL connections and transfers. Equivalent to setting 'ssl_verify' to 'false'.
+  允许 conda 执行不安全的 SSL 连接和传输。 相当于将`ssl_verify`设置为`false`。
 
 - --offline
 
-  Offline mode. Don't connect to the Internet.
+  离线模式，不连接网络。
 
 #### Output, Prompt, and Flow Control Options
 
@@ -1059,19 +1059,19 @@ usage: conda update [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
   Allow clobbering of overlapping file paths within packages, and suppress related warnings.
 
-#### Networking Options
+#### 网络选项
 
 - -C, --use-index-cache
 
-  Use cache of channel index files, even if it has expired.
+  使用源索引文件的缓存，即使它已过期。
 
 - -k, --insecure
 
-  Allow conda to perform "insecure" SSL connections and transfers. Equivalent to setting 'ssl_verify' to 'false'.
+  允许 conda 执行不安全的 SSL 连接和传输。 相当于将`ssl_verify`设置为`false`。
 
 - --offline
 
-  Offline mode. Don't connect to the Internet.
+  离线模式，不连接网络。
 
 #### Output, Prompt, and Flow Control Options
 
