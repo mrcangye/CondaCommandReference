@@ -13,3 +13,4 @@ https://gitee.com/mrcangye/CondaCommandReference
 
 如果翻译有误，欢迎提交issue。我会及时查看并回复
 
+github与gitee同步推送
