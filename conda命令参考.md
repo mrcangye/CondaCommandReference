@@ -537,7 +537,7 @@ usage: conda install [-h] [--revision REVISION] [-n ENVIRONMENT | -p PATH]
 
 - --show-channel-urls
 
-  Show channel urls. Overrides the value given by conda config --show show_channel_urls.
+  显示源网址。 覆盖`conda config --show show_channel_urls`给出的值。
 
 
 
@@ -562,57 +562,59 @@ usage: conda list [-h] [-n ENVIRONMENT | -p PATH] [--json] [-v] [-q]
                   [regex]
 ```
 
-#### Positional Arguments
+#### 位置参数
 
 - regex
 
-  List only packages matching this regular expression.
+  仅列出与正则表达式匹配的包。
 
-#### Named Arguments
+#### 命名参数
 
 - --show-channel-urls
 
-  Show channel urls. Overrides the value given by conda config --show show_channel_urls.
+  显示源网址。 覆盖`conda config --show show_channel_urls`给出的值。
 
 - -c, --canonical
 
-  Output canonical names of packages only. Implies --no-pip.
+  仅输出包的规范名称。 意味着 --no-pip。
 
 - -f, --full-name
 
-  Only search for full names, i.e., ^<regex>$.
+  仅仅搜索全名。
 
 - --explicit
 
-  List explicitly all installed conda packaged with URL (output may be used by conda create --file).
+  明确列出所有使用 URL 的已安装 conda（输出可由 conda create --file 使用）。
 
 - --md5
 
-  Add MD5 hashsum when using --explicit
+  使用 --explicit 时添加 MD5 哈希和
 
 - -e, --export
 
   Output requirement string only (output may be used by conda create --file).
 
+  输出仅为字符串（输出使用 conda create --file ）。
+
 - -r, --revisions
 
-  List the revision history and exit.
+  列出修订历史后退出。
 
 - --no-pip
 
-  Do not include pip-only installed packages.
+  不包含仅使用 pip 安装的软件包。
 
-#### Target Environment Specification
+#### 目标环境参数
 
 - -n, --name
 
-  Name of environment.
+  环境名
 
 - -p, --prefix
 
-  Full path to environment location (i.e. prefix).
+  环境位置的全路径
 
-#### Output, Prompt, and Flow Control Options
+#### 输出、提示和控制流选项
 
 - --json
 
@@ -1101,7 +1103,7 @@ usage: conda update [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
 - --show-channel-urls
 
-  Show channel urls. Overrides the value given by conda config --show show_channel_urls.
+  显示源网址。 覆盖`conda config --show show_channel_urls`给出的值。
 
 
 
@@ -1115,11 +1117,9 @@ Examples:
 
 
 
-### [Conda vs. pip vs. virtualenv commands](https://docs.conda.io/projects/conda/en/latest/commands.html#id2)
+### Conda vs. pip vs. virtualenv commands
 
-If you have used pip and virtualenv in the past, you can use conda to perform all of the same operations. Pip is a package manager and virtualenv is an environment manager. Conda is both.
-
-Scroll to the right to see the entire table.
+如果你过去使用过 pip 和 virtualenv，则可以使用 conda 执行所有相同的操作。 Pip 是一个包管理器，virtualenv 是一个环境管理器。 conda两者的功能都有。
 
 | Task                                 | Conda package and environment manager command         | Pip package manager command                                  | Virtualenv environment manager command                |
 | ------------------------------------ | ----------------------------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------- |
@@ -1139,10 +1139,5 @@ Scroll to the right to see the entire table.
 | Install Python                       | `conda install python=x.x`                            | X                                                            | X                                                     |
 | Update Python                        | `conda update python`*                                | X                                                            | X                                                     |
 
-\* `conda activate` only works on conda 4.6 and later versions. For conda versions prior to 4.6, type:
 
-> - Windows: `activate`
-> - Linux and macOS: `source activate`
-
-\* `conda update python` updates to the most recent in the series, so any Python 2.x would update to the latest 2.x and any Python 3.x to the latest 3.x.
 
