@@ -541,10 +541,6 @@ usage: conda install [-h] [--revision REVISION] [-n ENVIRONMENT | -p PATH]
 
 
 
-Examples:
-
-> conda install -n myenv scipy
-
 ### `conda list`
 
 
@@ -630,28 +626,6 @@ usage: conda list [-h] [-n ENVIRONMENT | -p PATH] [--json] [-v] [-q]
 
 
 
-Examples:
-
-List all packages in the current environment:
-
-> conda list
-
-List all packages installed into the environment 'myenv':
-
-> conda list -n myenv
-
-Save packages for future use:
-
-> conda list --export > package-list.txt
-
-Reinstall packages from an export file:
-
-> conda create -n myenv --file package-list.txt
-
-
-
-[Next ](https://docs.conda.io/projects/conda/en/latest/commands/package.html)[ Previous](https://docs.conda.io/projects/conda/en/latest/commands/install.html)
-
 ### `conda package`
 
 
@@ -704,7 +678,7 @@ usage: conda package [-h] [-n ENVIRONMENT | -p PATH] [-w PATH [PATH ...]] [-r]
 
   Full path to environment location (i.e. prefix).
 
-[Next ](https://docs.conda.io/projects/conda/en/latest/commands/remove.html)[ Previous](https://docs.conda.io/projects/conda/en/latest/commands/list.html)
+
 
 ### `conda remove`
 
@@ -822,10 +796,6 @@ usage: conda remove [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
 
 
-Examples:
-
-> conda remove -n myenv scipy
-
 ### `conda search`
 
 
@@ -907,35 +877,7 @@ usage: conda search [-h] [--envs] [-i] [--subdir SUBDIR] [-c CHANNEL]
 
 
 
-Examples:
 
-Search for a specific package named 'scikit-learn':
-
-> conda search scikit-learn
-
-Search for packages containing 'scikit' in the package name:
-
-> conda search *scikit*
-
-Note that your shell may expand '*' before handing the command over to conda. Therefore it is sometimes necessary to use single or double quotes around the query.
-
-> conda search '*scikit' conda search "\*scikit*"
-
-Search for packages for 64-bit Linux (by default, packages for your current platform are shown):
-
-> conda search numpy[subdir=linux-64]
-
-Search for a specific version of a package:
-
-> conda search 'numpy>=1.12'
-
-Search for a package on a specific channel
-
-> conda search conda-forge::numpy conda search 'numpy[channel=conda-forge, subdir=osx-64]'
-
-
-
-[Next ](https://docs.conda.io/projects/conda/en/latest/commands/update.html)[ Previous](https://docs.conda.io/projects/conda/en/latest/commands/remove.html)
 
 
 
@@ -1107,17 +1049,9 @@ usage: conda update [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
 
 
-Examples:
-
-> conda update -n myenv scipy
 
 
-
-[Next ](https://docs.conda.io/projects/conda/en/latest/glossary.html)[ Previous](https://docs.conda.io/projects/conda/en/latest/commands/search.html)
-
-
-
-### Conda vs. pip vs. virtualenv commands
+### Conda， pip，virtualenv命令对比 
 
 如果你过去使用过 pip 和 virtualenv，则可以使用 conda 执行所有相同的操作。 Pip 是一个包管理器，virtualenv 是一个环境管理器。 conda两者的功能都有。
 
