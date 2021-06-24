@@ -342,8 +342,6 @@ usage: conda info [-h] [--json] [-v] [-q] [-a] [--base] [-e] [-s]
 
 - -e, --envs
 
-  List all known conda environments.
-
   列出所有已知的conda 环境
 
 - -s, --system
@@ -439,19 +437,23 @@ usage: conda install [-h] [--revision REVISION] [-n ENVIRONMENT | -p PATH]
 
 - --strict-channel-priority
 
-  Packages in lower priority channels are not considered if a package with the same name appears in a higher priority channel.
+  如果具有相同名称的包出现在较高优先级源中，则不考虑较低优先级源中的包。
 
 - --no-channel-priority
 
   Package version takes precedence over channel priority. Overrides the value given by conda config --show channel_priority.
 
+  包版本优先于源优先级。 覆盖 `conda config --show channel_priority` 给出的值。
+
 - --no-deps
 
   Do not install, update, remove, or change dependencies. This WILL lead to broken environments and inconsistent behavior. Use at your own risk.
 
+  不安装、更新、删除或更改依赖项。 这将导致破坏环境，引发不一致。 风险自负。
+
 - --only-deps
 
-  Only install dependencies.
+  只安装依赖项。
 
 - --no-pin
 
@@ -459,27 +461,27 @@ usage: conda install [-h] [--revision REVISION] [-n ENVIRONMENT | -p PATH]
 
 - --force-reinstall
 
-  Ensure that any user-requested package for the current operation is uninstalled and reinstalled, even if that package already exists in the environment.
+  卸载并重新安装包，即使该包已存在于环境中。
 
 - --freeze-installed, --no-update-deps
 
-  Do not update or change already-installed dependencies.
+  不更新或更改已安装的依赖项。
 
 - --update-deps
 
-  Update dependencies.
+  更新依赖项。
 
 - -S, --satisfied-skip-solve
 
-  Exit early and do not run the solver if the requested specs are satisfied. Also skips aggressive updates as configured by 'aggressive_update_packages'. Similar to the default behavior of 'pip install'.
+  如果满足要求，提前退出并且不运行解释器。 还跳过由`aggressive_update_packages`配置的主动更新。 类似于`pip install`的默认行为。
 
 - --update-all, --all
 
-  Update all installed packages in the environment.
+  更新环境中所有已安装的软件包。
 
 - --update-specs
 
-  Update based on provided specifications.
+  根据提供的要求进行更新。
 
 #### 包链接和安装时的选项
 
@@ -489,11 +491,11 @@ usage: conda install [-h] [--revision REVISION] [-n ENVIRONMENT | -p PATH]
 
 - -m, --mkdir
 
-  Create the environment directory if necessary.
+  如有必要，创建环境目录。
 
 - --clobber
 
-  Allow clobbering of overlapping file paths within packages, and suppress related warnings.
+  允许破坏包内重叠的文件路径，并关闭相关警告。
 
 #### 网络选项
 
@@ -513,7 +515,7 @@ usage: conda install [-h] [--revision REVISION] [-n ENVIRONMENT | -p PATH]
 
 - -d, --dry-run
 
-  Only display what would have been done.
+  只显示应该做的事情。
 
 - --json
 
@@ -525,7 +527,7 @@ usage: conda install [-h] [--revision REVISION] [-n ENVIRONMENT | -p PATH]
 
 - -v, --verbose
 
-  Can be used multiple times. Once for INFO, twice for DEBUG, three times for TRACE.
+  可以多次使用。 INFO 一次，DEBUG 两次，TRACE 三次。
 
 - -y, --yes
 
@@ -543,13 +545,9 @@ usage: conda install [-h] [--revision REVISION] [-n ENVIRONMENT | -p PATH]
 
 ### `conda list`
 
+列出 conda 环境中的包。
 
-
-List linked packages in a conda environment.
-
-Options:
-
-
+选项：
 
 ```
 usage: conda list [-h] [-n ENVIRONMENT | -p PATH] [--json] [-v] [-q]
