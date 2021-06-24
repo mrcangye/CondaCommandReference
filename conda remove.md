@@ -1,4 +1,4 @@
-### `conda remove`
+# `conda remove`
 
 
 
@@ -18,19 +18,19 @@ usage: conda remove [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
                     [package_name [package_name ...]]
 ```
 
-#### Positional Arguments
+## Positional Arguments
 
 - package_name
 
   Package names to remove from the environment.
 
-#### Named Arguments
+## Named Arguments
 
 - --dev
 
   Use sys.executable -m conda in wrapper scripts instead of CONDA_EXE. This is mainly for use during tests where we test new conda source against old Python versions.
 
-#### Target Environment Specification
+## Target Environment Specification
 
 - -n, --name
 
@@ -40,7 +40,7 @@ usage: conda remove [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
   Full path to environment location (i.e. prefix).
 
-#### Channel Customization
+## Channel Customization
 
 - -c, --channel
 
@@ -58,7 +58,7 @@ usage: conda remove [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
   Specify name of repodata on remote server. Conda will try whatever you specify, but will ultimately fall back to repodata.json if your specs are not satisfiable with what you specify here. This is used to employ repodata that is reduced in time scope. You may pass this flag more than once. Leftmost entries are tried first, and the fallback to repodata.json is added for you automatically.
 
-#### Solver Mode Modifiers
+## Solver Mode Modifiers
 
 - --all
 
@@ -76,7 +76,7 @@ usage: conda remove [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
   Ignore pinned file.
 
-#### 网络选项
+## 网络选项
 
 - -C, --use-index-cache
 
@@ -90,7 +90,7 @@ usage: conda remove [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
   离线模式，不连接网络。
 
-#### Output, Prompt, and Flow Control Options
+## Output, Prompt, and Flow Control Options
 
 - -d, --dry-run
 

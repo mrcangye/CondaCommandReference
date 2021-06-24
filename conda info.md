@@ -1,4 +1,4 @@
-### `conda info`
+# `conda info`
 
 显示有关conda 安装的信息。
 
@@ -9,7 +9,7 @@ usage: conda info [-h] [--json] [-v] [-q] [-a] [--base] [-e] [-s]
                   [--unsafe-channels]
 ```
 
-#### 命名参数
+## 命名参数
 
 - -a, --all
 
@@ -30,8 +30,7 @@ usage: conda info [-h] [--json] [-v] [-q] [-a] [--base] [-e] [-s]
 - --unsafe-channels
 
   现示不安全的源列表。
-
-#### 输出、提示和控制流选项
+## 输出、提示和控制流选项
 
 - --json
 

@@ -1,4 +1,4 @@
-### `conda create`
+# `conda create`
 
 从指定的包列表创建一个新的 conda 环境。 要使用创建的环境，在该环境的目录中使用`conda activate envname`。 `envname`用你的环境的名字替换一下。此命令需要` -n NAME `或` -p PREFIX `选项。
 
@@ -15,13 +15,13 @@ usage: conda create [-h] [--clone ENV] [-n ENVIRONMENT | -p PATH] [-c CHANNEL]
                     [package_spec [package_spec ...]]
 ```
 
-#### 位置参数
+## 位置参数
 
 - package_spec
 
   要在 conda 环境中安装或更新的软件包的名字
 
-#### 命名参数
+## 命名参数
 
 - --clone
 
@@ -35,7 +35,7 @@ usage: conda create [-h] [--clone ENV] [-n ENVIRONMENT | -p PATH] [-c CHANNEL]
 
   在脚本中使用`sys.executable -m conda` 而不是 conda程序。 主要用于针对旧 Python 版本测试新 conda 源的开发测试期间使用。
 
-#### 目标环境的选项
+## 目标环境的选项
 
 - -n, --name
 
@@ -45,7 +45,7 @@ usage: conda create [-h] [--clone ENV] [-n ENVIRONMENT | -p PATH] [-c CHANNEL]
 
   环境的全路径
 
-#### 自定义源
+## 自定义源
 
 - -c, --channel
 
@@ -65,7 +65,7 @@ usage: conda create [-h] [--clone ENV] [-n ENVIRONMENT | -p PATH] [-c CHANNEL]
 
   指定远程服务器上的 repodata 名称。 Conda 将尝试你指定的任何内容，但如果你的规范与你在此处指定的内容不符，将退回到 repodata.json。 这用于使用时间范围减少的 repodata。 你可以多次通过此标志。 首先尝试最左边的条目，并自动为你添加 repodata.json 的后备。
 
-#### Solver Mode Modifiers
+## Solver Mode Modifiers
 
 - --strict-channel-priority
 
@@ -91,13 +91,13 @@ usage: conda create [-h] [--clone ENV] [-n ENVIRONMENT | -p PATH] [-c CHANNEL]
 
   忽略 .condarc 文件中的`create_default_packages`。
 
-#### 包链接和安装时的选项
+## 包链接和安装时的选项
 
 - --copy
 
   使用副本而不是硬链接或软链接安装所有软件包。
 
-#### 网络选项
+## 网络选项
 
 - -C, --use-index-cache
 
@@ -111,7 +111,7 @@ usage: conda create [-h] [--clone ENV] [-n ENVIRONMENT | -p PATH] [-c CHANNEL]
 
   离线模式，不连接网络。
 
-#### 输出、提示和控制流选项
+## 输出、提示和控制流选项
 
 - -d, --dry-run
 

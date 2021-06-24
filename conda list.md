@@ -1,4 +1,4 @@
-### `conda list`
+# `conda list`
 
 列出 conda 环境中的包。
 
@@ -11,13 +11,13 @@ usage: conda list [-h] [-n ENVIRONMENT | -p PATH] [--json] [-v] [-q]
                   [regex]
 ```
 
-#### 位置参数
+## 位置参数
 
 - regex
 
   仅列出与正则表达式匹配的包。
 
-#### 命名参数
+## 命名参数
 
 - --show-channel-urls
 
@@ -53,7 +53,7 @@ usage: conda list [-h] [-n ENVIRONMENT | -p PATH] [--json] [-v] [-q]
 
   不包含仅使用 pip 安装的软件包。
 
-#### 目标环境参数
+## 目标环境参数
 
 - -n, --name
 
@@ -63,7 +63,7 @@ usage: conda list [-h] [-n ENVIRONMENT | -p PATH] [--json] [-v] [-q]
 
   环境位置的全路径
 
-#### 输出、提示和控制流选项
+## 输出、提示和控制流选项
 
 - --json
 

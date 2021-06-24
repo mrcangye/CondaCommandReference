@@ -1,4 +1,4 @@
-### `conda search`
+# `conda search`
 
 
 
@@ -17,7 +17,7 @@ usage: conda search [-h] [--envs] [-i] [--subdir SUBDIR] [-c CHANNEL]
                     [--json] [-v] [-q]
 ```
 
-#### Named Arguments
+## Named Arguments
 
 - --envs
 
@@ -31,7 +31,7 @@ usage: conda search [-h] [--envs] [-i] [--subdir SUBDIR] [-c CHANNEL]
 
   Search the given subdir. Should be formatted like 'osx-64', 'linux-32', 'win-64', and so on. The default is to search the current platform.
 
-#### Channel Customization
+## Channel Customization
 
 - -c, --channel
 
@@ -49,7 +49,7 @@ usage: conda search [-h] [--envs] [-i] [--subdir SUBDIR] [-c CHANNEL]
 
   Specify name of repodata on remote server. Conda will try whatever you specify, but will ultimately fall back to repodata.json if your specs are not satisfiable with what you specify here. This is used to employ repodata that is reduced in time scope. You may pass this flag more than once. Leftmost entries are tried first, and the fallback to repodata.json is added for you automatically.
 
-#### 网络选项
+## 网络选项
 
 - -C, --use-index-cache
 
@@ -63,7 +63,7 @@ usage: conda search [-h] [--envs] [-i] [--subdir SUBDIR] [-c CHANNEL]
 
   离线模式，不连接网络。
 
-#### Output, Prompt, and Flow Control Options
+## Output, Prompt, and Flow Control Options
 
 - --json
 

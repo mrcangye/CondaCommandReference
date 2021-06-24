@@ -1,4 +1,4 @@
-### `conda update`
+# `conda update`
 
 
 
@@ -24,19 +24,19 @@ usage: conda update [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
                     [package_spec [package_spec ...]]
 ```
 
-#### Positional Arguments
+## Positional Arguments
 
 - package_spec
 
   Packages to install or update in the conda environment.
 
-#### Named Arguments
+## Named Arguments
 
 - --file
 
   Read package versions from the given file. Repeated file specifications can be passed (e.g. --file=file1 --file=file2).
 
-#### Target Environment Specification
+## Target Environment Specification
 
 - -n, --name
 
@@ -46,7 +46,7 @@ usage: conda update [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
   Full path to environment location (i.e. prefix).
 
-#### Channel Customization
+## Channel Customization
 
 - -c, --channel
 
@@ -64,7 +64,7 @@ usage: conda update [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
   Specify name of repodata on remote server. Conda will try whatever you specify, but will ultimately fall back to repodata.json if your specs are not satisfiable with what you specify here. This is used to employ repodata that is reduced in time scope. You may pass this flag more than once. Leftmost entries are tried first, and the fallback to repodata.json is added for you automatically.
 
-#### Solver Mode Modifiers
+## Solver Mode Modifiers
 
 - --strict-channel-priority
 
@@ -110,7 +110,7 @@ usage: conda update [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
   Update based on provided specifications.
 
-#### Package Linking and Install-time Options
+## Package Linking and Install-time Options
 
 - --copy
 
@@ -120,7 +120,7 @@ usage: conda update [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
   Allow clobbering of overlapping file paths within packages, and suppress related warnings.
 
-#### 网络选项
+## 网络选项
 
 - -C, --use-index-cache
 
@@ -134,7 +134,7 @@ usage: conda update [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
   离线模式，不连接网络。
 
-#### Output, Prompt, and Flow Control Options
+## Output, Prompt, and Flow Control Options
 
 - -d, --dry-run
 

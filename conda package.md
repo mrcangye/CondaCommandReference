@@ -1,4 +1,4 @@
-### `conda package`
+# `conda package`
 
 
 
@@ -14,7 +14,7 @@ usage: conda package [-h] [-n ENVIRONMENT | -p PATH] [-w PATH [PATH ...]] [-r]
                      [--pkg-build PKG_BUILD]
 ```
 
-#### Named Arguments
+## Named Arguments
 
 - -w, --which
 
@@ -40,7 +40,7 @@ usage: conda package [-h] [-n ENVIRONMENT | -p PATH] [-w PATH [PATH ...]] [-r]
 
   Package build number of the created package.
 
-#### Target Environment Specification
+## Target Environment Specification
 
 - -n, --name
 

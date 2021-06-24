@@ -1,4 +1,4 @@
-### Conda， pip，virtualenv命令对比 
+# Conda， pip，virtualenv命令对比 
 
 如果你过去使用过 pip 和 virtualenv，则可以使用 conda 执行所有相同的操作。 Pip 是一个包管理器，virtualenv 是一个环境管理器。 conda两者的功能都有。
 
