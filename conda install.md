@@ -35,7 +35,7 @@ usage: conda install [-h] [--revision REVISION] [-n ENVIRONMENT | -p PATH]
 
 - --dev
 
-  在包装脚本中使用 sys.executable -m conda 而不是 CONDA_EXE。 这主要用于在我们针对旧 Python 版本测试新 conda 源的测试期间使用。
+  在包装脚本中使用 `sys.executable -m conda` 而不是 `CONDA_EXE`。 这主要用于在我们针对旧 Python 版本测试新 `conda` 源的测试期间使用。
 
 ## 目标环境参数
 
@@ -73,13 +73,9 @@ usage: conda install [-h] [--revision REVISION] [-n ENVIRONMENT | -p PATH]
 
 - --no-channel-priority
 
-  Package version takes precedence over channel priority. Overrides the value given by conda config --show channel_priority.
-
   包版本优先于源优先级。 覆盖 `conda config --show channel_priority` 给出的值。
 
 - --no-deps
-
-  Do not install, update, remove, or change dependencies. This WILL lead to broken environments and inconsistent behavior. Use at your own risk.
 
   不安装、更新、删除或更改依赖项。 这将导致破坏环境，引发不一致。 风险自负。
 

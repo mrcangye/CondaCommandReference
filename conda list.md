@@ -69,11 +69,15 @@ usage: conda list [-h] [-n ENVIRONMENT | -p PATH] [--json] [-v] [-q]
 
   Report all output as json. Suitable for using conda programmatically.
 
+  将输出为 json格式。 以便用于 `conda` 编程。
+
 - -v, --verbose
 
-  Use once for info, twice for debug, three times for trace.
+  info, twice for debug, three times for trace.
+
+  一次用于info，两次用于debug，三次用于trace。
 
 - -q, --quiet
 
-  Do not display progress bar.
+  不显示进度条。
 

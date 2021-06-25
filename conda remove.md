@@ -2,13 +2,9 @@
 
 
 
-Remove a list of packages from a specified conda environment.
+从指定的 `conda`环境中删除包列表。
 
-> This command will also remove any package that depends on any of the specified packages as well---unless a replacement can be found without that dependency. If you wish to skip this dependency checking and remove just the requested packages, add the '--force' option. Note however that this may result in a broken environment, so use this with caution.
-
-Options:
-
-
+选项：
 
 ```
 usage: conda remove [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
@@ -18,27 +14,27 @@ usage: conda remove [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
                     [package_name [package_name ...]]
 ```
 
-## Positional Arguments
+## 位置参数
 
 - package_name
 
-  Package names to remove from the environment.
+  要删除的包名
 
-## Named Arguments
+## 命名参数
 
 - --dev
 
-  Use sys.executable -m conda in wrapper scripts instead of CONDA_EXE. This is mainly for use during tests where we test new conda source against old Python versions.
+  在包装脚本中使用 `sys.executable -m conda` 而不是 `CONDA_EXE`。仅供测试。
 
 ## Target Environment Specification
 
 - -n, --name
 
-  Name of environment.
+  环境名
 
 - -p, --prefix
 
-  Full path to environment location (i.e. prefix).
+  环境全路径
 
 ## Channel Customization
 
@@ -62,7 +58,7 @@ usage: conda remove [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
 - --all
 
-  Remove all packages, i.e., the entire environment.
+  删除所有包，即整个环境。
 
 - --features
 
@@ -70,7 +66,7 @@ usage: conda remove [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
 - --force-remove, --force
 
-  Forces removal of a package without removing packages that depend on it. Using this option will usually leave your environment in a broken and inconsistent state.
+  强制删除包而不删除依赖于它的包。 使用此选项通常会使环境处于损坏和不一致状态。
 
 - --no-pin
 
@@ -94,20 +90,20 @@ usage: conda remove [-h] [-n ENVIRONMENT | -p PATH] [-c CHANNEL] [--use-local]
 
 - -d, --dry-run
 
-  Only display what would have been done.
+  只显示本应该做的事情。
 
 - --json
 
-  Report all output as json. Suitable for using conda programmatically.
+  将所有输出报告为 json。 适合使用 conda 编程。
 
 - -q, --quiet
 
-  Do not display progress bar.
+  不显示进度条
 
 - -v, --verbose
 
-  Can be used multiple times. Once for INFO, twice for DEBUG, three times for TRACE.
+  可以多次使用。 INFO 一次，DEBUG 两次，TRACE 三次。
 
 - -y, --yes
 
-  Do not ask for confirmation.
+  不要求确认
