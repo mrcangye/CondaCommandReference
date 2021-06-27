@@ -41,8 +41,6 @@ usage: conda list [-h] [-n ENVIRONMENT | -p PATH] [--json] [-v] [-q]
 
 - -e, --export
 
-  Output requirement string only (output may be used by conda create --file).
-
   输出仅为字符串（输出使用 conda create --file ）。
 
 - -r, --revisions
@@ -67,13 +65,9 @@ usage: conda list [-h] [-n ENVIRONMENT | -p PATH] [--json] [-v] [-q]
 
 - --json
 
-  Report all output as json. Suitable for using conda programmatically.
-
   将输出为 json格式。 以便用于 `conda` 编程。
 
 - -v, --verbose
-
-  info, twice for debug, three times for trace.
 
   一次用于info，两次用于debug，三次用于trace。
 

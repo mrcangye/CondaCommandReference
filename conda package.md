@@ -1,12 +1,8 @@
 # `conda package`
 
+主要用于`conda`各种包的包管理
 
-
-Low-level conda package utility. (EXPERIMENTAL)
-
-Options:
-
-
+选项：
 
 ```
 usage: conda package [-h] [-n ENVIRONMENT | -p PATH] [-w PATH [PATH ...]] [-r]
@@ -14,38 +10,38 @@ usage: conda package [-h] [-n ENVIRONMENT | -p PATH] [-w PATH [PATH ...]] [-r]
                      [--pkg-build PKG_BUILD]
 ```
 
-## Named Arguments
+## 命名参数
 
 - -w, --which
 
-  Given some PATH print which conda package the file came from.
+  列出包所在路径
 
 - -r, --reset
 
-  Remove all untracked files and exit.
+  删除所有未跟踪的文件并退出。
 
 - -u, --untracked
 
-  Display all untracked files and exit.
+  列出所有未跟踪的文件并退出。
 
 - --pkg-name
 
-  Package name of the created package.
+  创建的包的包名。
 
 - --pkg-version
 
-  Package version of the created package.
+  创建的包的包版本
 
 - --pkg-build
 
-  Package build number of the created package.
+  创建的包的构建号。
 
-## Target Environment Specification
+## 目标环境参数
 
 - -n, --name
 
-  Name of environment.
+  环境名
 
 - -p, --prefix
 
-  Full path to environment location (i.e. prefix).
+  环境所在全路径

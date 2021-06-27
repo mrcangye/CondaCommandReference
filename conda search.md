@@ -1,14 +1,8 @@
 # `conda search`
 
+搜索包并显示相关信息。
 
-
-- Search for packages and display associated information.
-
-  The input is a MatchSpec, a query language for conda packages. See examples below.
-
-Options:
-
-
+选项：
 
 ```
 usage: conda search [-h] [--envs] [-i] [--subdir SUBDIR] [-c CHANNEL]
@@ -17,25 +11,25 @@ usage: conda search [-h] [--envs] [-i] [--subdir SUBDIR] [-c CHANNEL]
                     [--json] [-v] [-q]
 ```
 
-## Named Arguments
+## 命名参数
 
 - --envs
 
-  Search all of the current user's environments. If run as Administrator (on Windows) or UID 0 (on unix), search all known environments on the system.
+  搜索当前用户的所有环境。 如果以管理员身份运行（在 Windows 上）或 UID 0（在 unix 上），那么会搜索系统上的所有已知环境。
 
 - -i, --info
 
-  Provide detailed information about each package.
+  提供每个包的详细信息。
 
 - --subdir, --platform
 
-  Search the given subdir. Should be formatted like 'osx-64', 'linux-32', 'win-64', and so on. The default is to search the current platform.
+  搜索给定的子目录。 格式应为“osx-64”、“linux-32”、“win-64”等。 默认是搜索当前平台。
 
-## Channel Customization
+## 自定义源
 
 - -c, --channel
 
-  Additional channel to search for packages. These are URLs searched in the orderthey are given (including local directories using the '[file://](file:///)' syntax or simply a path like '/home/conda/mychan' or '../mychan'). Then, the defaults or channels from .condarc are searched (unless --override-channels is given). You can use 'defaults' to get the default packages for conda. You can also use any name and the .condarc channel_alias value will be prepended. The default channel_alias is http://conda.anaconda.org/.
+  用于搜索包的附加源。按照给定顺序搜索源（包括使用 '[file://](file:///)' 语法的本地目录或简单的路径，如 '/home/conda/mychan' 或 '../mychan '）。 然后，搜索 .condarc 中的默认源（除非给出了 --override-channels）。 您可以使用 `defaults` 来获取 conda 的默认包。 您还可以使用任何名称，并且 `.condar`   的  `channel_alias` 值将被添加。 默认的 `channel_alias` 是 http://conda.anaconda.org/。
 
 - --use-local
 
@@ -47,7 +41,7 @@ usage: conda search [-h] [--envs] [-i] [--subdir SUBDIR] [-c CHANNEL]
 
 - --repodata-fn
 
-  Specify name of repodata on remote server. Conda will try whatever you specify, but will ultimately fall back to repodata.json if your specs are not satisfiable with what you specify here. This is used to employ repodata that is reduced in time scope. You may pass this flag more than once. Leftmost entries are tried first, and the fallback to repodata.json is added for you automatically.
+  指定远程服务器上的 repodata 名称。 Conda 将尝试您指定的内容，出现错误则最终将退回到 repodata.json。  首先尝试最左边的条目，并自动为您添加 repodata.json 。
 
 ## 网络选项
 
@@ -63,17 +57,17 @@ usage: conda search [-h] [--envs] [-i] [--subdir SUBDIR] [-c CHANNEL]
 
   离线模式，不连接网络。
 
-## Output, Prompt, and Flow Control Options
+## 输出、提示和控制流选项
 
 - --json
 
-  Report all output as json. Suitable for using conda programmatically.
+  输出为json格式，方便后续编程使用
 
 - -v, --verbose
 
-  Use once for info, twice for debug, three times for trace.
+  一次用于INFO，两次用于Debug，三次用于TRACE。
 
 - -q, --quiet
 
-  Do not display progress bar.
+  不显示进度条。
 
